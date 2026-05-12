@@ -5,22 +5,26 @@ import dynamic from "next/dynamic";
 import { useTheme } from "next-themes";
 
 const CinematicIntro = dynamic(() => import("./CinematicIntro"), { ssr: false });
-const MobileIntro    = dynamic(() => import("./MobileIntro"), { ssr: false });
 
 const SESSION_KEY = "dipa_intro_played";
+const MOBILE_BREAKPOINT = 768;
 
 export default function IntroGate() {
   const [played, setPlayed] = useState<null | boolean>(null);
-  const [isMobile, setIsMobile] = useState(false);
   const [visible, setVisible] = useState(true);
   const { setTheme } = useTheme();
 
   useEffect(() => {
-    const done = sessionStorage.getItem(SESSION_KEY) === "1";
-    setPlayed(done);
-    setIsMobile(window.innerWidth < 768);
-    if (done) document.documentElement.classList.remove("intro-loading");
-  }, []);
+    const skip =
+      sessionStorage.getItem(SESSION_KEY) === "1" ||
+      window.innerWidth < MOBILE_BREAKPOINT;
+    setPlayed(skip);
+    if (skip) {
+      sessionStorage.setItem(SESSION_KEY, "1");
+      document.documentElement.classList.remove("intro-loading");
+      setTheme("dark");
+    }
+  }, [setTheme]);
 
   const handleDone = () => {
     sessionStorage.setItem(SESSION_KEY, "1");
@@ -41,11 +45,7 @@ export default function IntroGate() {
           transition={{ duration: 0.5 }}
           className="fixed inset-0 z-[10000]"
         >
-          {isMobile ? (
-            <MobileIntro onDone={handleDone} />
-          ) : (
-            <CinematicIntro onDone={handleDone} />
-          )}
+          <CinematicIntro onDone={handleDone} />
         </motion.div>
       )}
     </AnimatePresence>

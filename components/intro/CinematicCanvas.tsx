@@ -399,7 +399,7 @@ function Accessories() {
 
 // ─── Floating particles ───────────────────────────────────────
 function Particles() {
-  const count   = 200;
+  const count   = typeof window !== "undefined" && window.innerWidth < 768 ? 60 : 200;
   const posArr  = useMemo(() => {
     const arr = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
@@ -476,12 +476,13 @@ function Lights() {
 
 // ─── Canvas export ────────────────────────────────────────────
 export default function CinematicCanvas({ onZoomed }: { onZoomed: () => void }) {
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
   return (
     <Canvas
       camera={{ position: [2.8, 4.5, 9.0], fov: 52 }}
       shadows={false}
-      gl={{ antialias: true, alpha: false, powerPreference: "high-performance" }}
-      dpr={[1, 1.5]}
+      gl={{ antialias: !isMobile, alpha: false, powerPreference: "high-performance" }}
+      dpr={isMobile ? [1, 1] : [1, 1.5]}
       style={{ background: "#030712" }}
     >
       <Lights />

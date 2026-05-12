@@ -107,7 +107,7 @@ export const skillCategories = [
 export const projects = [
   {
     category: "Full Stack",
-    title: "Profit.exe — Expense Splitter",
+    title: "HisabKitab — Expense Splitter",
     desc: "A full-stack web app for splitting expenses, managing group budgets, and tracking shared money among friends.",
     tech: ["React", "Node.js", "Supabase"],
     github: "https://github.com/Ambiton-HackFest-2082/Profit.exe",
@@ -116,7 +116,7 @@ export const projects = [
   },
   {
     category: "AI/ML",
-    title: "DPcube — AI Therapy Assistant",
+    title: "CubeCare — AI Therapy Assistant",
     desc: "An AI-powered chatbot and therapy assistant platform designed to connect users with mental health support and guidance.",
     tech: ["React", "Node.js", "Supabase", "LLM"],
     github: "https://github.com/Sandbox-3-0/DPcube",
@@ -170,7 +170,7 @@ export const achievements = [
     year: "2025",
     location: "Khwopa College of Engineering",
     desc: "Won the on-campus Hult Prize competition at Khwopa College of Engineering in 2025. Led the team through innovation, creativity, and strong problem-solving skills to secure the title-winning position.",
-    image: "/images/1.png",
+    image: "/images/1.jpg",
   },
   {
     title: "KU Business Hack",
@@ -178,7 +178,7 @@ export const achievements = [
     year: "2025",
     location: "Kathmandu University, Dhulikhel",
     desc: "Achieved First Runner-Up at KU Business Hack held at Kathmandu University, Dhulikhel. Competed against innovative teams and presented impactful business and technology-driven solutions.",
-    image: "/images/2.png",
+    image: "/images/2.jpg",
   },
   {
     title: "Ambition Hackfest 2025",
@@ -186,7 +186,7 @@ export const achievements = [
     year: "2025",
     location: "Ambition College, Baneshwor",
     desc: "Secured the Title Winner position at Ambition Hackfest 2025 through innovative ideas, teamwork, and technical execution during the competitive hackathon event.",
-    image: "/images/3.png",
+    image: "/images/3.jpg",
   },
   {
     title: "Codefest 2025",
@@ -194,7 +194,7 @@ export const achievements = [
     year: "2025",
     location: "Nepal",
     desc: "Received the People's Choice Award at Codefest 2025, recognized for building a solution that strongly connected with the audience and community.",
-    image: "/images/4.png",
+    image: "/images/4.jpg",
   },
   {
     title: "Khwopa College Recognition Award",
@@ -202,7 +202,7 @@ export const achievements = [
     year: "2025",
     location: "Khwopa College of Engineering",
     desc: "Received a special recognition award from Khwopa College of Engineering for representing the college and achieving success in multiple hackathons and competitive innovation events.",
-    image: "/images/5.png",
+    image: "/images/5.jpg",
   },
 ];
 
