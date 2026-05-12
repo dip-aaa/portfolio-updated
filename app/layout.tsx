@@ -277,7 +277,7 @@ export default function RootLayout({
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var realOrig=console.error,inner=realOrig,depth=0;function filter(){var a=arguments[0];if(typeof a==='string'&&a.indexOf('Encountered a script tag')===0)return;if(depth>0)return realOrig.apply(console,arguments);depth++;try{return inner.apply(console,arguments);}finally{depth--;}}Object.defineProperty(console,'error',{configurable:true,get:function(){return filter;},set:function(v){inner=v;}});localStorage.removeItem('theme');if(sessionStorage.getItem('dipa_intro_played')!=='1'){document.documentElement.classList.add('intro-loading');}}catch(e){}})();`,
+            __html: `(function(){try{var realOrig=console.error,inner=realOrig,depth=0;function filter(){var a=arguments[0];if(typeof a==='string'&&a.indexOf('Encountered a script tag')===0)return;if(depth>0)return realOrig.apply(console,arguments);depth++;try{return inner.apply(console,arguments);}finally{depth--;}}Object.defineProperty(console,'error',{configurable:true,get:function(){return filter;},set:function(v){inner=v;}});if(sessionStorage.getItem('dipa_intro_played')!=='1'){document.documentElement.classList.add('intro-loading');}}catch(e){}})();`,
           }}
         />
       </head>

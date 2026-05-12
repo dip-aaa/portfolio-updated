@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
-import { useTheme } from "next-themes";
 
 const CinematicIntro = dynamic(() => import("./CinematicIntro"), { ssr: false });
 
@@ -12,7 +11,6 @@ const MOBILE_BREAKPOINT = 768;
 export default function IntroGate() {
   const [played, setPlayed] = useState<null | boolean>(null);
   const [visible, setVisible] = useState(true);
-  const { setTheme } = useTheme();
 
   useEffect(() => {
     const skip =
@@ -22,13 +20,11 @@ export default function IntroGate() {
     if (skip) {
       sessionStorage.setItem(SESSION_KEY, "1");
       document.documentElement.classList.remove("intro-loading");
-      setTheme("dark");
     }
-  }, [setTheme]);
+  }, []);
 
   const handleDone = () => {
     sessionStorage.setItem(SESSION_KEY, "1");
-    setTheme("dark");
     document.documentElement.classList.remove("intro-loading");
     setTimeout(() => setVisible(false), 100);
   };
