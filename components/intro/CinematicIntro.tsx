@@ -10,12 +10,7 @@ interface Props {
 }
 
 export default function CinematicIntro({ onDone }: Props) {
-  const [phase, setPhase]     = useState<"scene" | "flash" | "done">("scene");
-  const [sceneIn, setSceneIn] = useState(false);
-
-  // Canvas is mounted — start scene fade-in
-  const handleCanvasMount = useCallback(() => setSceneIn(true), []);
-  void handleCanvasMount;
+  const [phase, setPhase] = useState<"scene" | "flash" | "done">("scene");
 
   // Camera has zoomed close enough → trigger white flash
   const handleZoomed = useCallback(() => {
@@ -104,7 +99,7 @@ export default function CinematicIntro({ onDone }: Props) {
       <motion.button
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.5 }}
+        transition={{ delay: 0.7, duration: 0.4 }}
         onClick={skip}
         className="absolute top-[8vh] right-6 z-30 flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-widest uppercase
           border border-white/10 hover:border-white/30 text-white/40 hover:text-white/70

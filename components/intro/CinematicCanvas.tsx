@@ -48,7 +48,7 @@ const TGT_WAYPOINTS = [
 const camCurve = new THREE.CatmullRomCurve3(CAM_WAYPOINTS, false, "catmullrom", 0.4);
 const tgtCurve = new THREE.CatmullRomCurve3(TGT_WAYPOINTS, false, "catmullrom", 0.4);
 
-const DURATION = 5.5; // seconds — tightened from 9s; flash fires at ~87% (~4.8s)
+const DURATION = 3.5; // seconds — flash fires at ~87% (~3.0s)
 
 // ─── Camera controller ────────────────────────────────────────
 function CameraController({ onZoomed }: { onZoomed: () => void }) {
