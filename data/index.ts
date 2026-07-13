@@ -211,7 +211,7 @@ export const achievements = [
     location: "Orchid International College",
     desc: "Won the Best Presenter award at Orchid HackX 2026, recognized for clearly and confidently presenting the team's solution to the judges and audience.",
     image: "/images/orchid.png",
-    imagePosition: "center top",
+    imagePosition: "center 25%",
   },
   {
     title: "Khwopa College Recognition Award",
