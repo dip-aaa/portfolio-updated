@@ -197,6 +197,22 @@ export const achievements = [
     image: "/images/4.jpg",
   },
   {
+    title: "DeerHack 2026",
+    award: "Winner",
+    year: "2026",
+    location: "Nepal",
+    desc: "Winner of DeerHack 2026. Built and presented a standout solution, leading the team to the top position among competitive participants.",
+    image: "/images/deerhack.png",
+  },
+  {
+    title: "Orchid HackX 2026",
+    award: "Best Presenter",
+    year: "2026",
+    location: "Orchid International College",
+    desc: "Won the Best Presenter award at Orchid HackX 2026, recognized for clearly and confidently presenting the team's solution to the judges and audience.",
+    image: "/images/orchid.png",
+  },
+  {
     title: "Khwopa College Recognition Award",
     award: "Special Recognition",
     year: "2025",
