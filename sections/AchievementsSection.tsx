@@ -89,6 +89,7 @@ export default function AchievementsSection() {
                         fill
                         sizes="(max-width: 1024px) 100vw, 60vw"
                         className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
+                        style={{ objectPosition: a.imagePosition ?? "center" }}
                         priority={i === 0}
                       />
                       {/* very subtle vignette for depth */}
